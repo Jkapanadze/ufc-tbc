@@ -1,0 +1,145 @@
+#popup {
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#popup-body {
+  width: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+  align-self: center;
+  /**
+   * @property position
+   * @description This property is defined for snack bar element.
+   */
+  position: relative;
+}
+
+#popup-body ul {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+#popup-body ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+#popup-body ul li:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+#popup-body ul li section.label {
+  font-family: "TBCXRegular";
+}
+
+#popup-body ul li section.label#card-number:lang(en)::before {
+  content: "Card Number";
+}
+
+#popup-body ul li section.label#card-number:lang(ka)::before {
+  content: "ბარათის ნომერი";
+}
+
+#popup-body ul li section.label#expire-date:lang(en)::before {
+  content: "Expire Date";
+}
+
+#popup-body ul li section.label#expire-date:lang(ka)::before {
+  content: "ბარათის ვადა";
+}
+
+#popup-body ul li section.value {
+  font-family: "TBCXRegular";
+}
+
+#popup-body ul li section.label,
+#popup-body ul li section.value {
+  display: flex;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+#popup-body ul li section.value clipboard-copy {
+  outline: none;
+}
+
+/* (START) Theme specific styles. */
+.regular-light {
+  background-color: #ffffff;
+}
+
+.regular-light #popup-body ul li section.label {
+  color: #80848a;
+}
+
+.regular-light #popup-body ul li section.value {
+  color: #202124;
+}
+
+.regular-dark {
+  background-color: #202124;
+}
+
+.regular-dark #popup-body ul li section.label {
+  color: #9aa0a6;
+}
+
+.regular-dark #popup-body ul li section.value {
+  color: #ffffff;
+}
+
+.concept-light {
+  background-color: #ffffff;
+}
+
+.concept-light #popup-body ul li section.label {
+  color: #80848a;
+}
+
+.concept-light #popup-body ul li section.value {
+  color: #202124;
+}
+
+.concept-dark {
+  background-color: #202124;
+}
+
+.concept-dark #popup-body ul li section.label {
+  color: #9aa0a6;
+}
+
+.concept-dark #popup-body ul li section.value {
+  color: #ffffff;
+}
+
+.wm-light {
+  background-color: #ffffff;
+}
+
+.wm-light #popup-body ul li section.label {
+  color: #80848a;
+}
+
+.wm-light #popup-body ul li section.value {
+  color: #202124;
+}
+
+.wm-dark {
+  background-color: #202124;
+}
+
+.wm-dark #popup-body ul li section.label {
+  color: #9aa0a6;
+}
+
+.wm-dark #popup-body ul li section.value {
+  color: #ffffff;
+}
+/* (END) Theme specific styles. */

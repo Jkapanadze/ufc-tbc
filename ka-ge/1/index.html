@@ -1,0 +1,79 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="ka">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+
+  <base th:href="${baseUrl}" />
+  <link
+          rel="stylesheet"
+          href="/DigitalCard/templates/tbc/ka-ge/1/css/fonts.css"
+  />
+  <link
+          rel="stylesheet"
+          href="/DigitalCard/templates/tbc/ka-ge/1/css/popup.css"
+  />
+  <link
+          rel="stylesheet"
+          href="/DigitalCard/templates/tbc/ka-ge/1/css/snack-bar.css"
+  />
+  <link
+          rel="stylesheet"
+          href="/DigitalCard/templates/tbc/ka-ge/1/css/styles.css"
+  />
+  <base th:href="${baseUrl}" />
+</head>
+
+<body
+        oncontextmenu="return false;"
+        onmousedown="return false"
+        onselectstart="return false"
+        onCopy="return false"
+        onCut="return false"
+        onDrag="return false"
+        onDrop="return false"
+        class="regular-light"
+>
+<section id="popup" class="regular-light">
+  <section id="popup-body">
+    <ul>
+      <li>
+        <section class="label" id="card-number"></section>
+        <section class="value" id="copy-target" onclick="CopyToClipboard(); return false"> 4214 21412 2 </section>
+      </li>
+
+      <li>
+        <section class="label" id="expire-date"></section>
+        <section class="value">1212312</section>
+      </li>
+
+      <li>
+        <section class="label">CCV</section>
+        <section class="value">12312312</section>
+      </li>
+    </ul>
+  </section>
+</section>
+</body>
+
+<script>
+  function CopyToClipboard()
+  {
+    let r = document.createRange();
+    r.selectNode(document.getElementById("copy-target"));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+
+    snackBar = document.createElement("section");
+    hideTimeoutId = null;
+    snackBar.setAttribute("id", "snack-bar");
+    document.getElementById("popup-body").appendChild(snackBar);
+    clearTimeout(hideTimeoutId);
+    snackBar.classList.add("show");
+    hideTimeoutId = setTimeout(function () {
+      snackBar.classList.remove("show");
+    }, 1500);
+  }
+</script>
+</html>
